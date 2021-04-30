@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> shape </title>
+        <style>
+            .gridRow {
+                border: 1px solid black;
+            }
+
+            .cell {
+                border: 1px solid black;
+            }
+            canvas{border: 1px solid black}
+        </style>
+         <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    </head>
+    <body >
+        <button class="play-button">Play</button>
+        <button class="clear-button">Clear</button>
+        <!-- <canvas id="gLifeCanvas" width="600" height="600"/> -->
+  
+        <script>
+//             class shape{
+// constructor(){
+   
+
+// }
+// area(){
+
+//     return " "
+// }
+
+// }
+
+// class circle extends shape{
+// constructor(radius){
+//     super()
+// this.r=radius
+// }
+// area(){
+
+// return 3.14*this.r*this.r
+// }
+// }
+
+
+// class rectangle extends shape{
+//     constructor(length,width){
+//         super()
+//         this.l=length,
+//         this.w=width
+        
+//     }
+//     area(){
+//     return this.l*this.w
+//     }
+//     }
+//     class triangle extends shape{
+//         constructor(height,base){
+//             super()
+//             this.h=height
+//             this.b=base
+            
+//         }
+//         area(){
+//         return ((1/2)*this.h)*this.b
+//         }
+//     }
+
+
+
+//         class square extends shape{
+//             constructor(side){
+//                 super()
+//                 this.s=side
+                
+//             }
+//             area(){
+//             return this.s*this.s
+//             }
+//         }
+
+
+//             var cir= new circle(9)
+//             var rect=new rectangle(6,10)
+//             var tri= new triangle(15,8)
+//             var squ= new square(29)
+
+//             var arrofshapes=[cir.area(),rect.area(),tri.area(),squ.area()]
+//             console.log("AREA OF CIRCLE IS  :",cir.area())
+//             console.log("AREA OF RECTANGLE IS : ",rect.area(),)
+//             console.log("AREA OF TRIANGLE IS : ",tri.area())
+//             console.log("AREA OF SQUARE IS : ",squ.area())
+
+//             console.log("ARRAY OF AREA OF SHAPES IS : ",arrofshapes)
+//         var tot=0
+//         arrofshapes.forEach(function(item){
+
+//             tot=tot+item
+//         })
+//         console.log("CUMULATIVE AREA IS :",tot)
+        //    var  arr =[12,3,4,58,8]
+        //     Array.prototype.extractEven = function() {
+        //     for (i = 0; i <this.length; i++) {
+        //         if (this[i]%2 ==0){
+        //             return this[i]
+        //             }
+        //         }
+        //     };
+        //     var even = arr.extractEven()
+        //     console.log(even)
+        //     var numbers = [1,2,3]
+
+        // var  sumReducer = (initialValue, current) => initialValue + current;
+
+        // var reduce = (reducer, initialValue, array) => {
+        // var value = initialValue;
+
+        // for(let i = 0; i < array.length; i++) {
+        //     let currentValue = array[i]
+        //     value = reducer(value, currentValue)
+        // }
+
+        // return value;
+        // }
+
+        // const sumOfNumbersCustom = reduce(sumReducer, 0, numbers)
+
+        // console.log( sumOfNumbersCustom);
+        // var a = [10, 21, 13, 56];
+            
+        //     function add(callback) {return a+b}
+
+        //     Array.prototype.reduce2 = function (callback,initialvalue) {
+            
+        //     var result = initialvalue;
+        //     for(var i = 0; i < this.length; i++) {
+        //      callback( result += this[i])
+        //     }
+        //     return result;
+        //     };
+        //     var arr =a.reduce2((a,b) =>{return a+b},0)
+
+        //     console.log(arr)
+    //     var ages = [32, 33, 16, 40];
+        
+    //      Array.prototype.extracts = function(fun) {
+    //         filtered = []
+    //         for (var i = 0; i <this.length; i++) {
+    //             if (fun(this[i], i, this)){
+    //                 filtered.push(this[i])
+    //                 }
+    //             }
+    //             return filtered
+    //         };    
+    //         var filte =ages.extracts(item => item > 30 )
+    //    console.log(filte)
+
+    //    var ages = [29, 33, 16, 40];
+        
+    //     Array.prototype.found = function(fun) {
+           
+    //        for (var i = 0; i <this.length; i++) {
+    //            if (fun(this[i], i, this)){
+    //                return this[i]
+                  
+    //                }
+               
+    //         }
+               
+    //            return undefined
+    //        };    
+    //        var filte =ages.found(item => item > 80 )
+    //        console.log(filte)
+
+    //        var ages = [29, 33, 16, 40];
+        
+    //     Array.prototype.mapping = function(fun) {
+    //         filtered = []
+    //        for (var i = 0; i <this.length; i++) {
+            
+    //             filtered.push(fun(this[i],i,this))
+   
+    //         }
+               
+    //         return filtered
+    //        };    
+    //        function myFunction(num) {
+    //         return num * 10;
+    //         }
+    //        var filte =ages.mapping(myFunction)
+    //        console.log(filte)
+
+    //     const WIDTH  = 1000;
+    // const HEIGHT = 800;
+
+    // const NUM_CELLS_X = 100;
+    // const NUM_CELLS_Y = 80;
+
+    // const DEAD_CELL_COLOR = "#E1E1E1";
+    // const LIVE_CELL_COLOR = "#FF0000";
+    // const BORDER_COLOR    = "#999999";
+
+    // const NEIGHBOUR_OFFSETS = [
+    //     [-1,-1],[-1,0],[-1,1],
+    //     [0,-1],        [0,1],
+    //     [1,-1], [1,0], [1,1]
+    // ]
+
+    // var currFrame = new Array();
+    // var prevFrame = new Array();
+
+    // var canvasContext;
+
+    // var xSize, ySize;
+
+    // function copyFrame() {
+    //     for(var i=0; i<NUM_CELLS_X; i++) {
+    //         for(var j=0; j<NUM_CELLS_Y; j++) {
+    //             prevFrame[i][j] = currFrame[i][j];
+    //         }
+    //     }
+    // }
+
+    // function init() {
+    //     for(var i=0; i<NUM_CELLS_X; i++) {
+    //         currFrame[i] = new Array();
+    //         prevFrame[i] = new Array();
+    //         for(var j=0; j<NUM_CELLS_Y; j++) {
+    //             var randNumber = Math.random() * 200;
+    //             currFrame[i][j] = (randNumber > 100);
+    //             prevFrame[i][j] = false;
+    //         }
+    //     }
+
+    //     copyFrame();
+
+    //     var canvasElement = document.getElementById("gLifeCanvas");
+    //     canvasContext = canvasElement.getContext("2d");
+
+    //     xSize = WIDTH / NUM_CELLS_X;
+    //     ySize = HEIGHT / NUM_CELLS_Y;
+
+    //     //drawFrame();
+    //     animateFrame();
+    // }
+
+    // function getRandomNumber() {
+    //     var num = Math.random() * 200;
+    //     return parseInt(num);
+    // }
+
+    // function genRandomColor() {
+    //     var clr = "RGB(";
+    //     clr += getRandomNumber() + ","; //red
+    //     clr += getRandomNumber() + ","; //green
+    //     clr += getRandomNumber() + ")"; //blue
+
+    //     return clr;
+    // }
+
+    // function drawFrame() {
+    //     var x = 0;
+    //     var y = 0;
+    //     canvasContext.strokeStyle = BORDER_COLOR;
+    //     for(var i=0; i<NUM_CELLS_X; i++) {
+    //         for(var j=0; j<NUM_CELLS_Y; j++) {
+    //             if( currFrame[i][j] ) {
+    //                 //canvasContext.fillStyle = LIVE_CELL_COLOR;
+    //                 canvasContext.fillStyle = genRandomColor();
+    //             }
+    //             else {
+    //                 canvasContext.fillStyle = DEAD_CELL_COLOR;
+    //             }
+    //             canvasContext.fillRect(x, y, xSize, ySize);
+    //             canvasContext.beginPath();
+    //             canvasContext.rect(x, y, xSize, ySize);
+    //             canvasContext.stroke();
+    //             y += ySize;
+    //         }
+    //         x += xSize;
+    //         y = 0;
+    //     }
+    // }
+
+    // function animateFrame() {
+
+    //     for(var i=0; i<NUM_CELLS_X; i++) {
+    //         for(var j=0; j<NUM_CELLS_Y; j++) {
+    //             var countAlive = 0;
+    //             for(index in NEIGHBOUR_OFFSETS) {
+    //                 var arr = NEIGHBOUR_OFFSETS[index];
+    //                 var ii = i + arr[0];
+    //                 ii = ii < 0 ? 0 : ii;
+    //                 ii = ii > NUM_CELLS_X-1 ? NUM_CELLS_X-1 : ii;
+    //                 var jj = j + arr[1];
+    //                 jj = jj < 0 ? 0 : jj;
+    //                 jj = jj > NUM_CELLS_Y-1 ? NUM_CELLS_Y-1 : jj;
+    //                 if( prevFrame[ii][jj] ) {
+    //                     countAlive++;
+    //                 }
+    //             }
+
+    //             //Any live cell with fewer than two live neighbours dies, as if by underpopulation
+    //             if( prevFrame[i][j] && countAlive < 2 ) {
+    //                 currFrame[i][j] = false;
+    //             }
+
+    //             //Any live cell with two or three live neighbours lives on to the next generation.
+    //             if( prevFrame[i][j] && (countAlive == 2 || countAlive == 3) ) {
+    //                 currFrame[i][j] = true;
+    //             }
+
+    //             //Any live cell with more than three live neighbours dies, as if by overpopulation.
+    //             if( prevFrame[i][j] && countAlive > 3 ) {
+    //                 currFrame[i][j] = false;
+    //             }
+
+    //             //Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+    //             if( !prevFrame[i][j] && countAlive == 3 ) {
+    //                 currFrame[i][j] = true;
+    //             }
+    //         }
+    //     }
+
+    //     drawFrame();
+    //     copyFrame();
+
+    //     setTimeout(animateFrame, 100);
+    // }
+//     const arr = [125, 112, 105, 121];
+
+// for (var j = 0; j < arr.length; j++) {
+// setTimeout(function() {console.log('Index is: ' + j + ', element value is: ' + arr[j]);
+// }, 4000);
+// }
+    let rows = 20 ,  cols =20 , play = false;;
+    let grid = createGrid();
+
+    function createGrid( ){
+        let result = []
+        for(let i=0; i < rows; i++){
+              let row=[]
+            for(let j=0; j<cols ; j++){
+                row.push(false)
+            }
+            result.push(row)
+        }
+        return result
+    }
+
+    function setup() {
+
+        createCanvas(600,600)
+        console.log(grid)
+        grid[10][15] =true;
+        grid[10][16] =true;
+        grid[10][17] =true;
+        frameRate(3)
+
+    }
+
+
+
+    function nexGeneration() { 
+
+        let newGrid = createGrid()
+
+         for(let i=0; i < rows; i++){
+             
+            for(let j=0; j < cols ; j++){
+
+                //counts the number of alive tenents
+
+                let directions =[[1,0],[1,-1],[0,-1],[0,1],[1,1],[-1,0],[-1,-1],[-1,1]]
+                let aliveTenent = 0
+                  for(d of directions){
+                      let tenentRow = i+d[0]
+                      let tenentCol = j+d[1]
+                    if (tenentRow >0 && tenentCol >0 && tenentRow < rows && tenentCol < cols){
+                        if (grid[tenentRow][tenentCol]){
+                            aliveTenent++
+                        }
+                    }
+                  }
+                  //Deside weather or not new cell is alive or dead
+                  if (grid[i][j]){
+                      newGrid[i][j] = aliveTenent == 2 || aliveTenent == 3
+
+                  }else{
+                      newGrid[i][j] = aliveTenent == 3
+                  }
+
+            }
+         }
+        grid = newGrid
+    }
+
+
+
+
+
+
+
+
+    //random
+    function draw() {
+
+        background(255);
+
+        //display grid
+        for(let i=0; i < rows; i++){
+              
+            for(let j=0; j<cols ; j++){
+
+                if(grid[i][j]){
+
+                    fill(0);
+
+                    rect(j/cols * width , i/rows * height, width/cols, height/rows)
+                }
+            }
+        }    
+        stroke(190)
+        for(let i = 0 ; i<=rows; i++){
+            line(0,i/rows * height,height,i/rows*height);
+           
+        }
+
+        for(let i = 0 ; i<=cols; i++){
+            line(i/rows * width,0,i/rows*width,width);
+           
+        }
+        if (play) {
+            nexGeneration()
+
+        }
+
+    }
+    // a p5 function 
+    function mouseClicked (){
+
+        let row = Math.floor(mouseY/height * rows);
+        let col = Math.floor(mouseX/width * cols);
+        if (row >= 0 && col >= 0 && row < rows && col < cols) {
+             grid[row][col] = !grid[row][col];
+        }
+
+    }
+
+    let playButton = document.querySelector(".play-button");
+        playButton.addEventListener("click", function() {
+        play = !play;
+        if (play) {
+            playButton.textContent = "Pause";
+        } else {
+            playButton.textContent = "Play";
+        }
+    });
+    let clearButton = document.querySelector(".clear-button");
+    clearButton.addEventListener("click", function() {
+    grid = createGrid();
+    });
+
+
+  </script>
+    </body>
+</html>
